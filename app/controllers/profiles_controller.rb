@@ -42,4 +42,5 @@ class ProfilesController < ApplicationController
     @profile = Profile.find_by[id: params[:id]]
     @profile.destroy
     render 'destroy.html.erb'
+  end
 end
