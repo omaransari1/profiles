@@ -1,8 +1,11 @@
 <h1>All profiles</h1>
+<h2><a href="/profiles/new">Create New Profile</a></h2>
+<br>
 <% @profiles.each do |profile| %>
 <h2><%= profile.first_name %> <%= profile.last_name %></h2>
 <h3><%= profile.age %></h3>
 <h3><%= profile.email %></h3>
 <h3><%= profile.phone_number %></h3>
+<h3><a href="/profiles/<%=profile.id%>">View this profile</a></h3>
 <h3>~~~~~~~~</h3>
 <%end%>

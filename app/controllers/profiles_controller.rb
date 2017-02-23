@@ -14,17 +14,20 @@ class ProfilesController < ApplicationController
   end
 
   def create
-     @profile = Profile.new(
+    @profile = Profile.new(
       first_name: params[:first_name],
       last_name: params[:last_name],
       age: params[:age],
-      email: params[:email]
+      email: params[:email],
+      phone_number: params[:phone_number]
       )
-     @profile.save
-    render 'create.html.erb'
+    @profile.save
+    flash[:success] = "Profile successfully created"
+    redirect_to '/profiles'
   end
 
   def edit
+    @profile = Profile.find_by(id: params[:id])
     render 'edit.html.erb'
   end
 
@@ -35,12 +38,17 @@ class ProfilesController < ApplicationController
     @profile.age = params[:age]
     @profile.email = params[:email]
     @profile.phone_number = params[:phone_number]
+
     @profile.save
+    flash[:success] = "Profile successfully updated"
+
+    redirect_to "/profiles/#{@profile.id}"
   end
 
   def destroy
     @profile = Profile.find_by[id: params[:id]]
     @profile.destroy
-    render 'destroy.html.erb'
+    flash[:success] = "Profile deleted"
+    redirect_to '/profiles'
   end
 end
