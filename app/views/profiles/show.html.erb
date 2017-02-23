@@ -3,5 +3,5 @@
 <h3><%= @profile.email %></h3>
 <h3><%= @profile.phone_number %></h3>
 <h3><button><%= link_to "Edit", "/profiles/#{@profile.id}/edit" %></button></h3>
-<h3><button><%= link_to "Delete", "/profiles", method: :delete%></button></h3>
+<h3><button><%= link_to "Delete", "/profiles/#{@profile.id}", method: :delete%></button></h3>
 <h3><a href="/profiles">Go back to profiles</a></h3>

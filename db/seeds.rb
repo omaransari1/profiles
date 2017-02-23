@@ -5,3 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Profile.destroy_all
+
+20.times do
+  Profile.create(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    age: rand(18..100),
+    phone_number: Faker::PhoneNumber.phone_number
+    )
+end
+
+@profiles = Profile.all
+@profiles.each do |profile|
+  profile.email = Faker::Internet.free_email(profile.last_name)
+end
+
+puts "Done!"

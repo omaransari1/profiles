@@ -46,7 +46,7 @@ class ProfilesController < ApplicationController
   end
 
   def destroy
-    @profile = Profile.find_by[id: params[:id]]
+    @profile = Profile.find_by(id: params[:id])
     @profile.destroy
     flash[:success] = "Profile deleted"
     redirect_to '/profiles'
