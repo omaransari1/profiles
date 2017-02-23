@@ -19,6 +19,7 @@ end
 @profiles = Profile.all
 @profiles.each do |profile|
   profile.email = Faker::Internet.free_email(profile.last_name)
+  profile.save!
 end
 
 puts "Done!"
