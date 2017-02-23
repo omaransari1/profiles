@@ -1,7 +1,13 @@
-<h2><%= @profile.first_name %> <%= @profile.last_name %></h2>
-<h3><%= @profile.age %></h3>
-<h3><%= @profile.email %></h3>
-<h3><%= @profile.phone_number %></h3>
-<h3><button><%= link_to "Edit", "/profiles/#{@profile.id}/edit" %></button></h3>
-<h3><button><%= link_to "Delete", "/profiles/#{@profile.id}", method: :delete%></button></h3>
+<div class="panel panel-default">
+  <div class="panel panel-heading">
+    <h2><%= @profile.first_name %> <%= @profile.last_name %></h2>
+  </div>
+  <div class="panel panel-body">
+    <h3>Age: <%= @profile.age %></h3>
+    <h3>E-mail: <%= @profile.email %></h3>
+    <h3>Phone: <%= @profile.phone_number %></h3>
+    <h3><button><%= link_to "Edit", "/profiles/#{@profile.id}/edit" %></button></h3>
+    <h3><button><%= link_to "Delete", "/profiles/#{@profile.id}", method: :delete%></button></h3>
+  </div>
+</div>
 <h3><a href="/profiles">Go back to profiles</a></h3>

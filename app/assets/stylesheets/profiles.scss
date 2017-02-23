@@ -2,5 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
-  background-image: url(bluesky.jpg)
+  background-image: url(bluesky.jpg);
+  font-family: 'Russo One', sans-serif;
+  text-align: center;
+}
+
+.panel-heading {
+  background-image: url(concrete.jpg);
 }
