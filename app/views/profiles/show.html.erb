@@ -1,12 +1,9 @@
-<%= react_component 'Profile', { profile: @profile } %>
 <div class="panel panel-default">
   <div class="panel panel-heading">
-    <h2><%= @profile.first_name %> <%= @profile.last_name %></h2>
+    <%= react_component 'Profile', { profile: @profile } %>
   </div>
   <div class="panel panel-body">
-    <h3>Age: <%= @profile.age %></h3>
-    <h3>E-mail: <%= @profile.email %></h3>
-    <h3>Phone: <%= @profile.phone_number %></h3>
+    <%= react_component 'ProfilePanel', { profile: @profile } %>
     <h3><button><%= link_to "Edit", "/profiles/#{@profile.id}/edit" %></button></h3>
     <h3><button><%= link_to "Delete", "/profiles/#{@profile.id}", method: :delete%></button></h3>
   </div>

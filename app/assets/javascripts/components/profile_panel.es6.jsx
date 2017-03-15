@@ -1,4 +1,4 @@
-class Profile extends React.Component {
+class ProfilePanel extends React.Component {
 
   constructor(props){
     super(props)
@@ -15,11 +15,13 @@ class Profile extends React.Component {
   
   render () {
 
-    let open = <a className="clicker" onClick={this._touchedMe.bind(this)}>Show Name</a>;
+    let open = <a className="clicker" onClick={this._touchedMe.bind(this)}>Show Profile Details</a>;
 
     if(this.state.clicked){
       open = <div>
-              <h2>{this.props.profile.first_name} {this.props.profile.last_name}</h2>
+              <h3>Age: {this.props.profile.age}</h3>
+              <h3>E-mail: {this.props.profile.email}</h3>
+              <h3>Phone: {this.props.profile.phone_number}</h3>
              </div>;
     }
     return (
@@ -29,4 +31,3 @@ class Profile extends React.Component {
       )
   }
 }
-
