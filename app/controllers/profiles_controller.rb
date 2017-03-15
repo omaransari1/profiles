@@ -5,6 +5,7 @@ class ProfilesController < ApplicationController
   end
 
   def show
+    @profiles = Profile.all
     @profile = Profile.find_by(id: params[:id])
     render 'show.html.erb'
   end
